@@ -1409,10 +1409,10 @@ libraries = {
 }
 
 [node name="AnimationPlayer4" type="AnimationPlayer" parent="."]
-autoplay = "draco_idle"
 libraries = {
 "": SubResource("AnimationLibrary_6xevb")
 }
+autoplay = "draco_idle"
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
 libraries = {
