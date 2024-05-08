@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://6keldw5rqgjs"]
+
+[ext_resource type="Script" path="res://Scripts/BaseEnemy.gd" id="1_iga38"]
+[ext_resource type="Texture2D" uid="uid://ceey75gsi4mwf" path="res://Assets/Enemy Anims/skelly animations/row-1-column-1.png" id="2_8whif"]
+[ext_resource type="Texture2D" uid="uid://buu45vtvid254" path="res://Assets/Enemy Anims/skelly animations/row-1-column-2.png" id="3_gdkee"]
+[ext_resource type="Texture2D" uid="uid://cmpbiw1vgfh47" path="res://Assets/Enemy Anims/skelly animations/row-1-column-3.png" id="4_1gaqp"]
+[ext_resource type="Texture2D" uid="uid://dop2bxlv5271u" path="res://Assets/Enemy Anims/skelly animations/row-1-column-4.png" id="5_4qlq8"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_xb3mp"]
+frames = 4
+frame_0/texture = ExtResource("2_8whif")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("3_gdkee")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("4_1gaqp")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("5_4qlq8")
+frame_3/duration = 0.2
+
+[resource]
+script = ExtResource("1_iga38")
+name = "Mini Skeleton"
+texture = SubResource("AnimatedTexture_xb3mp")
+health = 30
+damage1 = 10
+damage2 = 0
+damage3 = 0
+ultimate = 0

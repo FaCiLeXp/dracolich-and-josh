@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://cijk25uh550xw"]
+
+[ext_resource type="Texture2D" uid="uid://bfhblqwcg5fut" path="res://Assets/Photo Assets/ph_bg_ce.jpeg" id="1_1w3gj"]
+[ext_resource type="Script" path="res://Scripts/Ending Scripts/cowardly_ending.gd" id="1_himh0"]
+[ext_resource type="FontFile" uid="uid://dk1qxakfeuode" path="res://Assets/fonts/Adventurer.ttf" id="2_xnug7"]
+[ext_resource type="FontFile" uid="uid://den51cdcit5uq" path="res://Assets/fonts/NESCyrillic.ttf" id="3_vnecp"]
+
+[node name="Cowardly Ending" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_himh0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1w3gj")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 9.0
+offset_top = 188.0
+offset_right = 9.0
+offset_bottom = 403.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_xnug7")
+theme_override_font_sizes/font_size = 40
+text = "You've run away from the encounter like a coward. With the evil Dracolich laughing at your retreating back, you vow to, one day, challenge him again and win back your best friend."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = -42.5
+offset_right = 269.0
+offset_bottom = -16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_vnecp")
+theme_override_font_sizes/font_size = 24
+text = "Quit to Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

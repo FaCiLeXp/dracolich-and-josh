@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://qmrqfarm0qs0"]
+
+[ext_resource type="Script" path="res://Scripts/Scene Scripts/main_menu.gd" id="1_65iam"]
+[ext_resource type="Texture2D" uid="uid://di7qgkjfmfxp6" path="res://Assets/Photo Assets/ph_mainmenu.jpg" id="2_177c3"]
+[ext_resource type="FontFile" uid="uid://dfaic2clwyh7x" path="res://Assets/fonts/CloisterBlack.ttf" id="3_y5n0d"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_65iam")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_177c3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y5n0d")
+theme_override_font_sizes/font_size = 60
+text = "Dracolich and Josh"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="start_button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 310.0
+offset_top = 255.0
+offset_right = 410.0
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("3_y5n0d")
+theme_override_font_sizes/font_size = 20
+text = "Start"
+
+[node name="quit_button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 310.0
+offset_top = 304.0
+offset_right = 410.0
+offset_bottom = 337.0
+theme_override_fonts/font = ExtResource("3_y5n0d")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+
+[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

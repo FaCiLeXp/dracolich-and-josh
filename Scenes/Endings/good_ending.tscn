@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmt305v38cle1"]
+
+[ext_resource type="Script" path="res://Scripts/Ending Scripts/good_ending.gd" id="1_186sj"]
+[ext_resource type="Texture2D" uid="uid://dy7opfs7bethx" path="res://Assets/Photo Assets/ph_bg_goodending.jpeg" id="2_25q20"]
+[ext_resource type="FontFile" uid="uid://dk1qxakfeuode" path="res://Assets/fonts/Adventurer.ttf" id="3_itekv"]
+[ext_resource type="FontFile" uid="uid://cdkf8wkprcqxb" path="res://Assets/fonts/NES.tres" id="4_lfpj8"]
+[ext_resource type="Texture2D" uid="uid://b5t2d4xtnpwqk" path="res://HD Josh front.png" id="5_6hqn2"]
+
+[node name="Good Ending" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_186sj")
+
+[node name="wow" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_25q20")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 6.0
+offset_top = 225.0
+offset_right = 6.0
+offset_bottom = 397.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_itekv")
+theme_override_font_sizes/font_size = 40
+text = "You've vanquished the evil Dracolich and saved the world. With Drake now freed, the show can continue without any more interruptions"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -8.5
+offset_right = 100.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_lfpj8")
+theme_override_font_sizes/font_size = 24
+text = "Quit to Menu
+"
+metadata/_edit_group_ = true
+
+[node name="HdJoshFront" type="Sprite2D" parent="."]
+position = Vector2(336.5, 181.5)
+scale = Vector2(0.521836, 0.602136)
+texture = ExtResource("5_6hqn2")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,40 @@
+[gd_resource type="Resource" load_steps=11 format=3 uid="uid://c60mpjmdl5u5b"]
+
+[ext_resource type="Script" path="res://Scripts/BaseEnemy.gd" id="1_cnsjj"]
+[ext_resource type="Texture2D" uid="uid://bjk6dv8fgf4iu" path="res://Assets/Enemy Anims/dracolich animations/row-1-column-1.png" id="2_qhlwc"]
+[ext_resource type="Texture2D" uid="uid://cnuj4pxjm02uu" path="res://Assets/Enemy Anims/dracolich animations/row-1-column-2.png" id="3_d06m0"]
+[ext_resource type="Texture2D" uid="uid://bif5oby4dr2b4" path="res://Assets/Enemy Anims/dracolich animations/row-1-column-3.png" id="4_lh1q5"]
+[ext_resource type="Texture2D" uid="uid://bx7jfhpq878n7" path="res://Assets/Enemy Anims/dracolich animations/row-1-column-4.png" id="5_omqmq"]
+[ext_resource type="Texture2D" uid="uid://j5gdo827jlje" path="res://Assets/Enemy Anims/dracolich animations/row-1-column-5.png" id="6_qr2fs"]
+[ext_resource type="Texture2D" uid="uid://mhlcjww0wwig" path="res://Assets/Enemy Anims/dracolich animations/row-1-column-6.png" id="7_vld0b"]
+[ext_resource type="Texture2D" uid="uid://04c88n31o3po" path="res://Assets/Enemy Anims/dracolich animations/row-1-column-7.png" id="8_38bho"]
+[ext_resource type="Texture2D" uid="uid://diuxlu62ky5mo" path="res://Assets/Enemy Anims/dracolich animations/row-1-column-8.png" id="9_7pbhs"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2qb6j"]
+frames = 8
+frame_0/texture = ExtResource("2_qhlwc")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("3_d06m0")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("4_lh1q5")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("5_omqmq")
+frame_3/duration = 0.2
+frame_4/texture = ExtResource("6_qr2fs")
+frame_4/duration = 0.2
+frame_5/texture = ExtResource("7_vld0b")
+frame_5/duration = 0.2
+frame_6/texture = ExtResource("8_38bho")
+frame_6/duration = 0.2
+frame_7/texture = ExtResource("9_7pbhs")
+frame_7/duration = 0.2
+
+[resource]
+script = ExtResource("1_cnsjj")
+name = "Dracolich"
+texture = SubResource("AnimatedTexture_2qb6j")
+health = 225
+damage1 = 18
+damage2 = 14
+damage3 = 16
+ultimate = 66

@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2i5pwec41j5a"]
+
+[ext_resource type="FontFile" uid="uid://dk1qxakfeuode" path="res://Assets/fonts/Adventurer.ttf" id="1_6e218"]
+[ext_resource type="Script" path="res://Scripts/Ending Scripts/bad_ending.gd" id="1_ykck7"]
+[ext_resource type="FontFile" uid="uid://den51cdcit5uq" path="res://Assets/fonts/NESCyrillic.ttf" id="2_sbvq1"]
+[ext_resource type="Texture2D" uid="uid://c8nlfbhabraq2" path="res://drake.png" id="2_v37xf"]
+
+[node name="Bad Ending" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ykck7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v37xf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 6.0
+offset_top = 184.0
+offset_right = 6.0
+offset_bottom = 399.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("1_6e218")
+theme_override_font_sizes/font_size = 40
+text = "You failed to defeat the evil dracolich and save your friend. As you lay in a pool of your own blood, your eyelids slowly lower, witnessing a final image of a triumphant Drake-o-lich."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -51.5
+offset_right = 2.0
+offset_bottom = -25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sbvq1")
+theme_override_font_sizes/font_size = 24
+text = "Quit to Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

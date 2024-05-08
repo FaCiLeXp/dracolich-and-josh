@@ -1,0 +1,127 @@
+[gd_scene load_steps=15 format=3 uid="uid://dkcft33wmu5xf"]
+
+[ext_resource type="Script" path="res://Scripts/Scene Scripts/boss.gd" id="1_74xnx"]
+[ext_resource type="Texture2D" uid="uid://bistaxvvqhnse" path="res://HD Draco sprites.png" id="2_x3awp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gev0"]
+atlas = ExtResource("2_x3awp")
+region = Rect2(0, 0, 1375, 860)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46esx"]
+atlas = ExtResource("2_x3awp")
+region = Rect2(1375, 0, 1375, 860)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t785n"]
+atlas = ExtResource("2_x3awp")
+region = Rect2(2750, 0, 1375, 860)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve3fv"]
+atlas = ExtResource("2_x3awp")
+region = Rect2(4125, 0, 1375, 860)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbbvx"]
+atlas = ExtResource("2_x3awp")
+region = Rect2(5500, 0, 1375, 860)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h1wl"]
+atlas = ExtResource("2_x3awp")
+region = Rect2(6875, 0, 1375, 860)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ldi"]
+atlas = ExtResource("2_x3awp")
+region = Rect2(8250, 0, 1375, 860)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu8h1"]
+atlas = ExtResource("2_x3awp")
+region = Rect2(9625, 0, 1375, 860)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ugmf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gev0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46esx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t785n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve3fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbbvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h1wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ldi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu8h1")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1u0a8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj3rs"]
+radius = 6.85714
+height = 19.1429
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ssth"]
+radius = 48.0
+height = 134.0
+
+[node name="Boss" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_74xnx")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(-20, -50)
+scale = Vector2(0.36, 0.36)
+sprite_frames = SubResource("SpriteFrames_2ugmf")
+animation = &"idle_down"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.407843)
+position = Vector2(-25.495, -61.685)
+scale = Vector2(0.36, 0.36)
+sprite_frames = SubResource("SpriteFrames_2ugmf")
+animation = &"idle_down"
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_1u0a8")
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+rotation = 1.5708
+scale = Vector2(7, 7)
+shape = SubResource("CapsuleShape2D_nj3rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7ssth")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="area_exited" from="detection_area" to="." method="_on_detection_area_area_exited"]
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="child_entered_tree" from="hitbox/CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]
+[connection signal="child_entered_tree" from="hitbox/CollisionShape2D" to="." method="_on_hitbox_child_entered_tree"]
